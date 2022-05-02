@@ -1,0 +1,90 @@
+<div class="holder" style="margin: 100px auto">
+
+  <div class="row">
+
+    <div class="col-6 offset-3">
+
+      <h4>Modificar la novedad</h4>
+      <form
+        action="/admin/novedades/modificar"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <input type="hidden" value="{{novedad.id}}" name="id" />
+        <div class="form-group">
+          <label
+            for=""
+            style="margin: 5px 0; font-weight:900; color:rgb(30, 30, 223);"
+          >Titulo</label>
+          <input
+            type="text"
+            class="form-control"
+            name="titulo"
+            value="{{novedad.titulo}}"
+          />
+        </div>
+
+        <div class="form-group">
+          <label
+            style="margin: 5px 0; font-weight:900; color:rgb(30, 30, 223);"
+            for=""
+          >Subtitulo</label>
+          <input
+            type="text"
+            class="form-control"
+            name="subtitulo"
+            value="{{novedad.subtitulo}}"
+          />
+        </div>
+
+        <div class="form-group">
+          <label
+            for=""
+            style="margin: 5px 0; font-weight:900; color:rgb(30, 30, 223);"
+          >Cuerpo</label>
+          <textarea
+            name="cuerpo"
+            class="form-control"
+            style="height: 300px; resize: none;"
+          >{{novedad.cuerpo}}</textarea>
+        </div>
+
+        <div class="form-group">
+          <p>
+            <label>Imagen
+              <input type="file" name="imagen" id="imagen" />
+            </label>
+          </p>
+          <p>
+            <label>
+              <input
+                type="checkbox"
+                name="img_delete"
+                id="img_delete"
+                value="1"
+              />
+              Eliminar imagen actual?
+            </label>
+            <input
+              type="hidden"
+              name="img_original"
+              value="{{novedad.img_id}}"
+            />
+          </p>
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-primary"
+          style="margin-top:50px;"
+        >Modificar</button>
+      </form>
+
+      {{#if error}}
+        <p>{{message}}</p>
+      {{/if}}
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,13 @@
+header {
+    margin-top: 0px;
+    
+}
+header h1{
+    position: static;
+
+}
+.row p{
+    margin-top: 15px;
+    font-weight: bold;
+    color:brown;
+}
